@@ -1,3 +1,10 @@
+"""
+Jorge Andres Gandara Oliveros - T00065470
+Robert Andres Pantoja Calderon - T00060394
+Diego Andres Garcia Alvarez - T00064583
+Angelo Alexander Howell Diaz - T00061114
+"""
+
 import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
