@@ -11,7 +11,7 @@ class ObjetoController(object):
         self.file = '{0}{1}'.format(DIR_DATA, 'storage4.json')
 
     def add(self, objeto: objeto = objeto()) -> str:
-        with open(self.file, 'r+') as f:
+        with open(self.file, 'r+', encoding='utf-8') as f:
             data = json.load(f)
             data['objetos'].append(objeto.__str__())
             f.seek(0)
@@ -21,7 +21,7 @@ class ObjetoController(object):
 
     def show(self):
         # Opening JSON file
-        with open(self.file, 'r') as openfile:
+        with open(self.file, 'r', encoding='utf-8') as openfile:
             # Reading from json file
             json_object = json.load(openfile)
         return json_object

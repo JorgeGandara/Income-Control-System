@@ -1,7 +1,7 @@
 from logic.ente import ente
 
 class objeto(ente):
-    def __init__(self, id: int = 0, nombre: str = "nombre", descripcion: str="descripcion", lugaresPermitidos: str="Lugares permitidos", estado: str= "Estado"):
+    def __init__(self, id: str = "0", nombre: str = "nombre", descripcion: str="descripcion", lugaresPermitidos: str="Lugares permitidos", estado: str= "Estado"):
       super().__init__(id, nombre)
       self.descripcion = descripcion
       self.lugaresPermitidos = lugaresPermitidos
@@ -39,7 +39,7 @@ class objeto(ente):
       
     def equals(self, other):
       if isinstance(other, objeto):
-            return self.id == other.id and self.nombre == other.nombre and self.descripcion== other.descripcion and self.estado == other.estado
-            return False
+        return self.id == other.id and self.nombre == other.nombre and self.descripcion== other.descripcion and self.estado == other.estado
+        return False
 
 

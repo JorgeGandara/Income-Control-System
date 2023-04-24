@@ -1,3 +1,11 @@
+"""
+Income Control System v1.1.1
+Jorge Andres Gandara Oliveros - T00065470
+Robert Andres Pantoja Calderon - T00060394
+Diego Andres Garcia Alvarez - T00064583
+Angelo Alexander Howell Diaz - T00061114
+"""
+
 import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
@@ -29,13 +37,18 @@ app.add_middleware(
 def read_root():
     return {"200": "Welcome To Evento Restful API"}
 
-@app.get("/api/cliente")
+@app.get("/api/cliente", )
 async def root_cliente():
     return st_object_cliente.show()
 
 @app.post("/api/cliente")
-async def add_cliente(id: str, nombre: str, apellido: str, direccion: str, telefono: str, email: str, tiempoPermanencia: int, evento: str, lugaresPermitidos: str):
-    return st_object_cliente.add(cliente(id=id, nombre=nombre, apellido=apellido, direccion=direccion, telefono=telefono, email=email, tiempoPermanencia=tiempoPermanencia, evento=evento, lugaresPermitidos=lugaresPermitidos))
+async def add_cliente(id: str, nombre: str, apellido: str, direccion: str, telefono: str, 
+                      email: str, tiempoPermanencia: int, evento: str, lugaresPermitidos: str):
+    cli = cliente(id=id, nombre=nombre, apellido=apellido, 
+                  direccion=direccion, telefono=telefono,
+                  email=email, tiempoPermanencia=tiempoPermanencia, 
+                  evento=evento, lugaresPermitidos=lugaresPermitidos)
+    return st_object_cliente.add(cli)
 
 @app.get("/api/objeto")
 async def root_objeto():

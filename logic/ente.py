@@ -2,37 +2,25 @@
 
 class ente():
   #@abstractmethod
-  def __init__(self, id: int = 0, nombre: str = "nombre"):
-    if type(id) != int:
-      print("Por favor ingrese un id valido.")
-      return
-    if type(nombre) != str:
-      print("Por favor ingrese un nombre valido.")
-      return
-    self.id: int = id
-    self.nombre: str = nombre
+  def __init__(self, id: str = "0", nombre: str = "nombre"):
+    self.id = id
+    self.nombre = nombre
     
   @property
-  def id(self) -> int:
-    return self._id
+  def id(self) -> str:
+    return self.id
     
   @id.setter
-  def id(self, id_nuevo: int) -> None:
-    if id_nuevo > 0 and isinstance(id_nuevo, int):
-        self._id = id_nuevo
-    else:
-        print("Por favor ingrese un id valido.")
+  def id(self, value) -> str:
+    self.id = value
 
   @property
   def nombre(self) -> str:
-    return self._nombre
+    return self.nombre
     
   @nombre.setter
-  def nombre(self, nombre_nuevo: str) -> None:
-    if isinstance(nombre_nuevo, str):
-      self._descripcion = nombre_nuevo
-    else:
-      print("Por favor ingrese un nombre valido.")
+  def nombre(self, value) -> str:
+    self.nombre = value
     
   #@abstractmethod
   def __str__(self):
