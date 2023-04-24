@@ -1,5 +1,5 @@
 """
-Income Control System v1.1.1
+Income Control System V1.1.1
 Jorge Andres Gandara Oliveros - T00065470
 Robert Andres Pantoja Calderon - T00060394
 Diego Andres Garcia Alvarez - T00064583
